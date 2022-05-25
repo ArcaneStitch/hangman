@@ -16,11 +16,13 @@ import random
 import word_list
 
 user_lives = 6
-user_input = ""
 
-
-list = word_list.normal_words
-chosen_word = str(list).split(", ")
+list = word_list.normal_words[:]
 list_number = len(list)
 
+random_word = random.randint(0, list_number - 1)
+chosen_word = list[random_word]
 print(chosen_word)
+print(list_number)
+
+#user_input = input("I am thinking of a five letter word... ")
