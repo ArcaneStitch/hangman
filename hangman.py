@@ -11,3 +11,16 @@
 #                      words in three lists for each difficulty
 # Date Created: 05/25/2022
 # Date Last Modified: 05/25/2022
+
+import random
+import word_list
+
+user_lives = 6
+user_input = ""
+
+
+list = word_list.normal_words
+chosen_word = str(list).split(", ")
+list_number = len(list)
+
+print(chosen_word)
