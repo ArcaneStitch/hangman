@@ -14,10 +14,12 @@
 
 import random
 import word_list
+import hangman_art
 
 user_lives = 6
 list = random.choice(word_list.normal_words).lower()
 save_input = []
+game_end = False
 
 size = len(list)
 for size in range(size):
@@ -26,16 +28,20 @@ for size in range(size):
 print("I am thinking of a five letter word...")
 print(list)
 
-while user_lives > 0:
+while (not game_end) and (user_lives > 0):
     user_input = input("Enter a letter... ").lower()
-    if(len(user_input) > 1):
-        print("Please enter one letter! -1 life")
+    for position in range(size + 1):
+        letter = list[position]
+        if letter == user_input:
+            save_input[position] = letter
+    if user_input not in list:
+        print(f"{user_input} not in the word! lose a life")
         user_lives -= 1
-    else:
-        for position in range(size + 1):
-            letter = list[position]
-            if letter == user_input:
-                save_input[position] = letter
-                print(save_input)
+        print(user_lives)
+    print(save_input)
+
+    if "_" not in save_input:
+        game_end = True
+
 if user_lives <= 0:
     print("You lost!")
