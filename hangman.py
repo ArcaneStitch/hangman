@@ -9,6 +9,9 @@
 # Additional features: I will implement the stick figure after the basics are laid out,
 #                      easy medium and hard modes, a separate file that will contain the 
 #                      words in three lists for each difficulty
+# Disclaimer: I am aware there might be vulgar and crude words in the lists, I have
+#             randomly pulled long lists of words out without filtering them, there
+#             still might be vulgar words hidden in the lists, be aware of that.
 # Date Created: 05/25/2022
 # Date Last Modified: 05/26/2022
 
