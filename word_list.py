@@ -494,4 +494,8 @@ hard_words = ['Jimjams','AARRGHH', 'ABACTOR',
 'ZIZZING', 'ZIZZLED', 'ZIZZLES', 'ZLOTIES',
 'ZOOLOGY', 'ZOOMING', 'ZOONING', 'ZOONITE', 
 'ZOONOMY', 'ZOOPERY', 'ZOOTAXY', 'ZOOTIER', 
-'ZOOTOMY', 'ZOOTYPE', ]
+'ZOOTOMY', 'ZOOTYPE', 'ZYMOGEN', 'ZYMOMES', 
+'ZYMOSAN', 'ZYMOSES', 'ZYMOSIS', 'ZYMOTIC', 
+'ZYMURGY', 'ZYTHUMS', 'ZYZZYVA']
+
+combined_list = [easy_words, normal_words, hard_words]
