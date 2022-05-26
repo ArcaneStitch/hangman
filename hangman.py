@@ -17,32 +17,30 @@ import word_list
 import hangman_art
 
 user_lives = 6
-list = random.choice(word_list.normal_words).lower()
+list = random.choice(word_list.normal_words).lower() # chooses random word from list
 save_input = []
 game_end = False
 
 size = len(list)
 for size in range(size):
-    save_input += "_"
+    save_input += "_" # fills up save_input with "_"
 
 print("I am thinking of a five letter word...")
-print(list)
+print(list) # debug
 
 while (not game_end) and (user_lives > 0):
     user_input = input("Enter a letter... ").lower()
     for position in range(size + 1):
-        letter = list[position]
+        letter = list[position] # letter is assigned the letter in the specific index
         if letter == user_input:
-            save_input[position] = letter
-            print(save_input)
+            save_input[position] = letter # index at [position] is assigned value of letter
+            print(f"{' '.join(save_input)}") # string transformation
     if user_input not in list:
         print(f"{user_input} not in the word! lose a life")
         user_lives -= 1
         print(hangman_art.stages[user_lives])
     if "_" not in save_input:
         game_end = True
-
-    
 
 if user_lives <= 0:
     print("You lost!")
