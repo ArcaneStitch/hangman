@@ -17,7 +17,23 @@ import word_list
 import hangman_art
 
 user_lives = 6
-list = random.choice(word_list.normal_words).lower() # chooses random word from list
+cheater = "cheater"
+user_difficulty_choice = input("easy, medium, or hard?: ").lower()
+
+if user_difficulty_choice == "easy":
+    list = random.choice(word_list.combined_list[0]).lower() # chooses random easy word from list
+elif user_difficulty_choice == "medium":
+    list = random.choice(word_list.combined_list[1]).lower() # chooses random mediumwo rd from list
+elif user_difficulty_choice == "hard":
+    list = random.choice(word_list.combined_list[2]).lower() # chooses random hard word from list
+elif user_difficulty_choice == cheater:
+    print("Cheater!, foresight unlocked")
+    list = random.choice(random.choice(word_list.combined_list)).lower()
+    print(list)
+else:
+    print("Choose a valid option, you lose!")
+    quit()
+
 save_input = []
 game_end = False
 
@@ -25,8 +41,7 @@ size = len(list)
 for size in range(size):
     save_input += "_" # fills up save_input with "_"
 
-print("I am thinking of a five letter word...")
-print(list) # debug
+print(f"I am thinking of a {size + 1} letter word...")
 
 while (not game_end) and (user_lives > 0):
     user_input = input("Enter a letter... ").lower()
@@ -44,3 +59,6 @@ while (not game_end) and (user_lives > 0):
 
 if user_lives <= 0:
     print("You lost!")
+    print(list)
+elif user_lives > 0:
+    print("You win!")
