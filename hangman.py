@@ -16,13 +16,26 @@ import random
 import word_list
 
 user_lives = 6
+list = random.choice(word_list.normal_words).lower()
+save_input = []
 
-list = word_list.normal_words[:]
-list_number = len(list)
+size = len(list)
+for size in range(size):
+    save_input += "_"
 
-random_word = random.randint(0, list_number - 1)
-chosen_word = list[random_word]
-print(chosen_word)
-print(list_number)
+print("I am thinking of a five letter word...")
+print(list)
 
-#user_input = input("I am thinking of a five letter word... ")
+while user_lives > 0:
+    user_input = input("Enter a letter... ").lower()
+    if(len(user_input) > 1):
+        print("Please enter one letter! -1 life")
+        user_lives -= 1
+    else:
+        for position in range(size + 1):
+            letter = list[position]
+            if letter == user_input:
+                save_input[position] = letter
+                print(save_input)
+if user_lives <= 0:
+    print("You lost!")
