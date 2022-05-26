@@ -10,7 +10,7 @@
 #                      easy medium and hard modes, a separate file that will contain the 
 #                      words in three lists for each difficulty
 # Date Created: 05/25/2022
-# Date Last Modified: 05/25/2022
+# Date Last Modified: 05/26/2022
 
 import random
 import word_list
@@ -34,14 +34,15 @@ while (not game_end) and (user_lives > 0):
         letter = list[position]
         if letter == user_input:
             save_input[position] = letter
+            print(save_input)
     if user_input not in list:
         print(f"{user_input} not in the word! lose a life")
         user_lives -= 1
-        print(user_lives)
-    print(save_input)
-
+        print(hangman_art.stages[user_lives])
     if "_" not in save_input:
         game_end = True
+
+    
 
 if user_lives <= 0:
     print("You lost!")
