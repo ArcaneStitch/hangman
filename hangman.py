@@ -54,7 +54,7 @@ while (not game_end) and (user_lives > 0):
             save_input[position] = letter # index at [position] is assigned value of letter
             print(f"{' '.join(save_input)}") # string transformation
     if user_input not in list:
-        print(f"{user_input} not in the word! lose a life")
+        print(f"{user_input} is not in the word! lose a life")
         user_lives -= 1
         print(hangman_art.stages[user_lives])
     if "_" not in save_input:
@@ -62,6 +62,6 @@ while (not game_end) and (user_lives > 0):
 
 if user_lives <= 0:
     print("You lost!")
-    print(list)
+    print(f"{list} is the word")
 elif user_lives > 0:
     print("You win!")
